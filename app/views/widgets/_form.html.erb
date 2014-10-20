@@ -12,9 +12,12 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :choice_one %><br>
-    <%= f.text_field :choice_one %>
+    <% @widget.choice_one_possibilities.each do |choice_one_possibility| %>
+      <%= f.label :choice_one, choice_one_possibility %>
+      <%= f.radio_button :choice_one, choice_one_possibility %><br/>
+    <% end %>
   </div>
+
   <div class="field">
     <%= f.label :choice_two %><br>
     <%= f.text_field :choice_two %>
