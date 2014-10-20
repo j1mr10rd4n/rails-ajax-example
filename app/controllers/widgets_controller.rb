@@ -17,6 +17,18 @@ class WidgetsController < ApplicationController
     @widget = Widget.new
   end
 
+  # GET /widgets/lookup_choice_two_possibilities
+  def lookup_choice_two_possibilities
+    @widget = Widget.new
+    if params[:widget]
+     @widget.choice_one = params[:widget][:choice_one]
+      @widget.do_lookup
+    else
+      @widget.errors[:choice_one] << "Please select a value for Choice One"
+    end
+    render 'new'
+  end
+
   # GET /widgets/1/edit
   def edit
   end
