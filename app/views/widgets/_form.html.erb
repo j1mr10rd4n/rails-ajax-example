@@ -20,8 +20,9 @@
 
   <div class="field">
     <%= f.label :choice_two %><br>
-    <%= f.text_field :choice_two %>
+    <%= f.select :choice_two, @widget.choice_two_possibilities, prompt: "Please select a value for Choice One first" %>
   </div>
+
   <div class="actions">
     <%= f.submit %>
   </div>
