@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Choice one:</strong>
+  <%= @widget.choice_one %>
+</p>
+
+<p>
+  <strong>Choice two:</strong>
+  <%= @widget.choice_two %>
+</p>
+
+<%= link_to 'Edit', edit_widget_path(@widget) %> |
+<%= link_to 'Back', widgets_path %>
