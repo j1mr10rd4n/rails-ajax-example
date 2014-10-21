@@ -1,0 +1,14 @@
+<%= form_for(@widget) do |f| %>
+
+  <%= f.hidden_field :choice_one %>
+
+  <div class="field">
+    <%= f.label :choice_two %><br>
+    <%= f.select :choice_two, @widget.choice_two_possibilities, prompt: prompt_text(@widget) %>
+  </div>
+
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

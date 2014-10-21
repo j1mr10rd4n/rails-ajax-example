@@ -26,7 +26,10 @@ class WidgetsController < ApplicationController
     else
       @widget.errors[:choice_one] << "Please select a value for Choice One"
     end
-    render 'new'
+    respond_to do |format|
+      format.html { render 'new' }
+      format.js {   }
+    end
   end
 
   # GET /widgets/1/edit
