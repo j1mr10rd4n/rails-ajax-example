@@ -1,4 +1,4 @@
-<%= form_for(@widget, {url: lookup_choice_two_possibilities_widgets_path, method: :get}) do |f| %>
+<%= form_for(@widget, {url: lookup_choice_two_possibilities_widgets_path, method: :get, html: {id: 'widget-choice-one'}}) do |f| %>
   <% if @widget.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@widget.errors.count, "error") %> prohibited this widget from being saved:</h2>
@@ -11,7 +11,7 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div id="widget-choice-one-fields" class="field">
     <label>Choice one</label><br/>
     <% @widget.choice_one_possibilities.each do |choice_one_possibility| %>
       <%= f.label :choice_one, choice_one_possibility %>
@@ -20,7 +20,7 @@
   </div>
 
   <div class="actions">
-    <%= f.submit "Submit Choice One" %>
+    <%= f.submit "Submit Choice One", id: "widget-submit-choice-one" %>
   </div>
 <% end %>
 
